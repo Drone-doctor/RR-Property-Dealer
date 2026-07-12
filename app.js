@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            // Toggle hamburger animation style if desired
         });
 
-        // Close menu when links are clicked
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (matchesType && matchesAction) {
                 card.style.display = 'block';
-                // Trigger animation
                 card.style.opacity = '0';
                 setTimeout(() => {
                     card.style.opacity = '1';
@@ -69,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Click handler for property type filters (PG, 1 BHK, 2 BHK)
     if (propertyFilters) {
         propertyFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -81,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Click handler for transaction/action filters (Rent, Sale/Purchase)
     if (actionFilters) {
         actionFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -93,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Quick Search Form Logic in Hero
+    // Quick Search Form Logic
     const quickSearchBtn = document.getElementById('quickSearchBtn');
     const searchType = document.getElementById('searchType');
     const searchAction = document.getElementById('searchAction');
@@ -103,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const typeVal = searchType.value;
             const actionVal = searchAction.value;
 
-            // Synchronize active filters
             if (propertyFilters) {
                 propertyFilters.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
@@ -124,13 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             activeAction = actionVal;
 
-            // Filter properties and scroll
             filterProperties();
             document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
         });
     }
 
-    // Contact Form AJAX Submission (Works locally with file:// paths)
+    // Contact Form AJAX Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -161,26 +154,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 contactForm.reset();
             })
             .catch(error => {
-                console.warn('Network request blocked or failed. Falling back to mailto link for local file browsing.', error);
-                
-                // Construct pre-filled email body
+                console.warn('Network request failed. Falling back to mailto link.', error);
                 const subject = `Property Inquiry from ${formData.name}`;
                 const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`;
-                
                 const mailtoUrl = `mailto:uddeshyag12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                
-                // Open user's email client
                 window.location.href = mailtoUrl;
-                
-                alert('Since you are browsing the site as a local file, we have opened your email client to send the message. Please click send in your mail app!');
+                alert('Opened your email client to send the message. Please click send in your mail app!');
             })
             .finally(() => {
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
             });
+        });
     }
 
-    // Visit Counter logic starting from 1000 users (Global API with local fallback)
+    // Visit Counter logic (Global API with local fallback)
     const visitCounterEl = document.getElementById('visitCount');
     if (visitCounterEl) {
         fetch("https://api.counterapi.dev/v1/rrpropertydealer/visits/up")
