@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RR Property Dealer | One Place, Every Property Solution</title>
+    <meta name="description"
+        content="RR Property Dealer provides premium PG, 1 BHK, and 2 BHK flats for sale, purchase, and rent. Your Trust, Our Commitment.">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-hotel"></i> RR <span>Property</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#listings" class="nav-link">Listings</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-sparkles"></i> One Place, Every Property Solution
+                </div>
+                <h1 class="hero-title">
+                    Find Your Perfect Space With <span>RR Property</span>
+                </h1>
+                <p class="hero-tagline">
+                    Whether you are looking for a cozy <strong>PG</strong>, a modern <strong>1 BHK</strong>, or a
+                    spacious <strong>2 BHK</strong> flat, we provide seamless services for <strong>Sale, Purchase, and
+                        Rent</strong>.
+                </p>
+                <div class="hero-actions">
+                    <a href="#listings" class="btn-primary">
+                        Explore Listings <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn-secondary">Contact Us</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Client Trust</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>150+</h3>
+                        <p>Properties</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="quick-card">
+                    <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Quick Search</h3>
+                    <div class="quick-form">
+                        <div class="form-group">
+                            <label for="searchType">Looking For</dt>
+                                <select id="searchType">
+                                    <option value="all">All Properties</option>
+                                    <option value="pg">Paying Guest (PG)</option>
+                                    <option value="1bhk">1 BHK Flat</option>
+                                    <option value="2bhk">2 BHK Flat</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="searchAction">Purpose</dt>
+                                <select id="searchAction">
+                                    <option value="all">Any (Rent/Sale/Purchase)</option>
+                                    <option value="Rent">Rent</option>
+                                    <option value="Sale">Sale/Purchase</option>
+                                </select>
+                        </div>
+                        <button class="btn-primary" id="quickSearchBtn"
+                            style="justify-content: center; width: 100%; border: none; cursor: pointer;">
+                            Search Properties
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our <span>Services</span></h2>
+            <p>We facilitate complete property solutions catering to all your real estate needs in one place.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h3>Property Renting</h3>
+                <p>Find comfortable PGs, fully furnished 1 BHK, and spacious 2 BHK options for immediate rent.
+                    Budget-friendly and hassle-free onboarding.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-house-circle-check"></i>
+                </div>
+                <h3>Property Sale</h3>
+                <p>Listing services to sell your property at the best market value. We manage end-to-end documentation
+                    and client verification.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h3>Property Purchase</h3>
+                <p>Looking to own a home? Browse verified flats and plots with verified titles and premium locations
+                    ready for purchase.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Listings Section -->
+    <section class="listings" id="listings">
+        <div class="section-header">
+            <h2>Featured <span>Properties</span></h2>
+            <p>Browse our handpicked apartments, PGs, and flats tailored just for you.</p>
+        </div>
+
+        <div class="filter-bar">
+            <div class="filter-group" id="propertyFilters">
+                <button class="filter-btn active" data-filter="all">All Properties</button>
+                <button class="filter-btn" data-filter="pg">Paying Guest (PG)</button>
+                <button class="filter-btn" data-filter="1bhk">1 BHK Flats</button>
+                <button class="filter-btn" data-filter="2bhk">2 BHK Flats</button>
+            </div>
+
+            <div class="filter-group" id="actionFilters">
+                <button class="filter-btn active" data-action="all">All Offers</button>
+                <button class="filter-btn" data-action="Rent">For Rent</button>
+                <button class="filter-btn" data-action="Sale">For Sale/Purchase</button>
+            </div>
+        </div>
+
+        <div class="listings-grid" id="listingsGrid">
+            <!-- Property 1 (PG) -->
+            <div class="property-card" data-type="pg" data-action="Rent">
+                <div class="property-img" style="background-image: url('images/media__1783786279875.jpg');">
+                    <span class="property-badge">For Rent</span>
+                    <div class="property-price-tag">₹10,500/mo</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-type">Paying Guest (PG)</div>
+                    <h3 class="property-title">Stanza Living Co-living Space</h3>
+                    <p class="property-desc">Premium fully furnished PG with high-speed WiFi, modern meals, laundry, and
+                        daily cleaning services included.</p>
+                    <div class="property-features">
+                        <span><i class="fa-solid fa-bed"></i> Single/Double</span>
+                        <span><i class="fa-solid fa-wifi"></i> Free WiFi</span>
+                        <span><i class="fa-solid fa-utensils"></i> Meals</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 2 (1 BHK) -->
+            <div class="property-card" data-type="1bhk" data-action="Rent">
+                <div class="property-img" style="background-image: url('images/sun-lit-apartment.webp');">
+                    <span class="property-badge">For Rent</span>
+                    <div class="property-price-tag">₹15000/mo</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-type">1 RK Flat</div>
+                    <h3 class="property-title">Modern Sun-Lit Apartment</h3>
+                    <p class="property-desc">Beautiful 1 BHK with separate modular kitchen, balcony, 24/7 water supply,
+                        and secure gated parking.</p>
+                    <div class="property-features">
+                        <span><i class="fa-solid fa-bed"></i> 1 Bed</span>
+                        <span><i class="fa-solid fa-bath"></i> 1 Bath</span>
+                        <span><i class="fa-solid fa-square"></i> 650 sq ft</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 3 (2 BHK) -->
+            <div class="property-card" data-type="2bhk" data-action="Sale">
+                <div class="property-img" style="background-image: url('images/media__1783786279861.jpg');">
+                    <span class="property-badge">For Sale</span>
+                    <div class="property-price-tag">₹70 Lakhs</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-type">2 BHK Flat</div>
+                    <h3 class="property-title">Elegance Heights Luxury Flat</h3>
+                    <p class="property-desc">Spacious 2 BHK ready-to-move apartment with premium fittings, swimming pool
+                        access, and club house amenities.</p>
+                    <div class="property-features">
+                        <span><i class="fa-solid fa-bed"></i> 2 Beds</span>
+                        <span><i class="fa-solid fa-bath"></i> 2 Baths</span>
+                        <span><i class="fa-solid fa-square"></i> 1100 sq ft</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 4 (PG) -->
+            <div class="property-card" data-type="pg" data-action="Rent">
+                <div class="property-img" style="background-image: url('images/media__1783786279893.jpg');">
+                    <span class="property-badge">For Rent</span>
+                    <div class="property-price-tag">₹8,000/mo</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-type">Paying Guest (PG)</div>
+                    <h3 class="property-title">Youth Hostels Co-living</h3>
+                    <p class="property-desc">Affordable shared accommodation perfect for students and working
+                        professionals. Right next to public transport.</p>
+                    <div class="property-features">
+                        <span><i class="fa-solid fa-bed"></i> Shared Room</span>
+                        <span><i class="fa-solid fa-shield-halved"></i> 24/7 Security</span>
+                        <span><i class="fa-solid fa-tint"></i> water purifier</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 5 (1 BHK) -->
+            <div class="property-card" data-type="1bhk" data-action="Sale">
+                <div class="property-img" style="background-image: url('images/media__1783786279847.jpg');">
+                    <span class="property-badge">For Sale</span>
+                    <div class="property-price-tag">₹55 Lakhs</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-type">1 BHK Flat</div>
+                    <h3 class="property-title">Royal Crest Studio Flat</h3>
+                    <p class="property-desc">Excellent investment property. Compact 1 BHK in prime commercial locality
+                        with guaranteed high rental yields.</p>
+                    <div class="property-features">
+                        <span><i class="fa-solid fa-bed"></i> 1 Bed</span>
+                        <span><i class="fa-solid fa-bath"></i> 1 Bath</span>
+                        <span><i class="fa-solid fa-square"></i> 500 sq ft</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 6 (2 BHK) -->
+            <div class="property-card" data-type="2bhk" data-action="Rent">
+                <div class="property-img" style="background-image: url('images/media__1783786873541.jpg');">
+                    <span class="property-badge">For Rent</span>
+                    <div class="property-price-tag">₹26000/mo</div>
+                </div>
+                <div class="property-content">
+                    <div class="property-type">2 BHK Flat</div>
+                    <h3 class="property-title">Spacious Greenview Residencies</h3>
+                    <p class="property-desc">Furnished 2 BHK flat overlooking lush public parks. Features 2 large
+                        balconies, master bedroom with bathtub.</p>
+                    <div class="property-features">
+                        <span><i class="fa-solid fa-bed"></i> 2 Beds</span>
+                        <span><i class="fa-solid fa-bath"></i> 2 Baths</span>
+                        <span><i class="fa-solid fa-square"></i> 1250 sq ft</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motto Banner / About Us -->
+    <section class="motto-banner" id="about">
+        <div class="motto-container">
+            <div class="motto-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h2 class="motto-title">Your Trust, Our Commitment</h2>
+            <p class="motto-subtitle">
+                At RR Property Dealer, we place client relationships above everything. We offer fully transparent
+                solutions, verified properties, and dedicated guidance to ensure peace of mind.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Have questions about listings or wish to sell/purchase properties? Contact us directly. We are
+                    available 24/7 to provide professional assistance.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Mobile Numbers</h4>
+                            <p><a href="tel:+919758196840">+91 9758196840</a></p>
+                            <p><a href="tel:+917703902223">+91 7703902223</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:guptashivambdn@gmail.com">guptashivambdn@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Office Location</h4>
+                            <p>Block D, Block A, Sector 88, Noida, Uttar Pradesh 201304</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Send Us A Message</h3>
+                <form id="contactForm" action="https://formsubmit.co/guptashivambdn@gmail.com" method="POST">
+                    <!-- Disable captcha for smooth experience -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="quick-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
+                                style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.75rem 1rem; border-radius: 8px; font-family: var(--font-body); outline: none; transition: var(--transition); resize: none;"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary"
+                            style="justify-content: center; border: none; cursor: pointer;">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-hotel"></i> RR <span>Property</span>
+                </a>
+                <p>Providing premium residential and commercial property solutions. Your Trust, Our Commitment.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#listings">Listings</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Property Types</h4>
+                <ul>
+                    <li><a href="#listings">Paying Guest (PG)</a></li>
+                    <li><a href="#listings">1 BHK Apartments</a></li>
+                    <li><a href="#listings">2 BHK Apartments</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RR Property Dealer. All rights reserved.</p>
+            <p>Created with dedication to quality.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
