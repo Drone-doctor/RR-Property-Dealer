@@ -878,3 +878,96 @@ footer {
         font-size: 24px;
     }
 }
+
+/* About Us Owner Section Styling */
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+    text-align: left;
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-owner-img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    display: block;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.about-image-wrapper:hover .about-owner-img {
+    transform: scale(1.03);
+}
+
+.motto-badge {
+    display: inline-block;
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--primary);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.owner-name {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.owner-title {
+    font-size: 1.15rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.motto-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+
+.motto-title-text {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .about-image-wrapper {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .motto-divider {
+        margin: 0 auto 1.5rem;
+    }
+    
+    .motto-subtitle {
+        text-align: center !important;
+    }
+}
