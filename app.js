@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: document.getElementById('message').value
             };
 
-            fetch("https://formsubmit.co/ajax/guptashivambdn@gmail.com", {
+            fetch("https://formsubmit.co/ajax/uddeshyag12@gmail.com", {
                 method: "POST",
                 headers: { 
                     'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                alert('Thank you! Your message has been sent successfully. Please check guptashivambdn@gmail.com for the activation email if this is your first submission.');
+                alert('Thank you! Your message has been sent successfully. Please check uddeshyag12@gmail.com for the activation email if this is your first submission.');
                 contactForm.reset();
             })
             .catch(error => {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const subject = `Property Inquiry from ${formData.name}`;
                 const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`;
                 
-                const mailtoUrl = `mailto:guptashivambdn@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const mailtoUrl = `mailto:uddeshyag12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 
                 // Open user's email client
                 window.location.href = mailtoUrl;
