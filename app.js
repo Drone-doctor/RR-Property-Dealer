@@ -180,16 +180,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // Visit Counter logic starting from 1000 users
+    // Visit Counter logic starting from 1000 users (Global API with local fallback)
     const visitCounterEl = document.getElementById('visitCount');
     if (visitCounterEl) {
-        let count = localStorage.getItem('visitCount');
-        if (!count) {
-            count = 1000;
-        } else {
-            count = parseInt(count) + 1;
-        }
-        localStorage.setItem('visitCount', count);
-        visitCounterEl.textContent = count;
+        fetch("https://api.counterapi.dev/v1/rrpropertydealer/visits/up")
+            .then(response => response.json())
+            .then(data => {
+                if (data && typeof data.count === 'number') {
+                    visitCounterEl.textContent = 1000 + data.count;
+                }
+            })
+            .catch(error => {
+                console.warn('Failed to fetch global counter. Falling back to local storage.', error);
+                let count = localStorage.getItem('visitCount');
+                if (!count) {
+                    count = 1000;
+                } else {
+                    count = parseInt(count) + 1;
+                }
+                localStorage.setItem('visitCount', count);
+                visitCounterEl.textContent = count;
+            });
     }
 });
