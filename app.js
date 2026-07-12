@@ -178,6 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
             });
-        });
+    }
+
+    // Visit Counter logic starting from 1000 users
+    const visitCounterEl = document.getElementById('visitCount');
+    if (visitCounterEl) {
+        let count = localStorage.getItem('visitCount');
+        if (!count) {
+            count = 1000;
+        } else {
+            count = parseInt(count) + 1;
+        }
+        localStorage.setItem('visitCount', count);
+        visitCounterEl.textContent = count;
     }
 });
