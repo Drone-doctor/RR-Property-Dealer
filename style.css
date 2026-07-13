@@ -930,7 +930,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
 }
 
 .about-card-front::before {
