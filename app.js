@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            // Toggle hamburger animation style if desired
         });
 
+        // Close menu when links are clicked
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (matchesType && matchesAction) {
                 card.style.display = 'block';
+                // Trigger animation
                 card.style.opacity = '0';
                 setTimeout(() => {
                     card.style.opacity = '1';
@@ -66,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Click handler for property type filters (PG, 1 BHK, 2 BHK)
     if (propertyFilters) {
         propertyFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -77,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Click handler for transaction/action filters (Rent, Sale/Purchase)
     if (actionFilters) {
         actionFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -98,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const typeVal = searchType.value;
             const actionVal = searchAction.value;
 
+            // Synchronize active filters
             if (propertyFilters) {
                 propertyFilters.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
@@ -118,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             activeAction = actionVal;
 
+            // Filter properties and scroll
             filterProperties();
             document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
         });
@@ -205,6 +212,57 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cardInner) {
                 cardInner.classList.toggle('flipped');
             }
+        });
+    }
+
+    // Review Form AJAX Submission
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('reviewSubmitBtn');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Submitting Review...";
+            submitBtn.disabled = true;
+
+            // Get selected star rating value
+            let ratingVal = "";
+            const checkedRating = reviewForm.querySelector('input[name="rating"]:checked');
+            if (checkedRating) {
+                ratingVal = checkedRating.value;
+            }
+
+            const formData = {
+                name: document.getElementById('reviewName').value,
+                rating: ratingVal + " Stars",
+                feedback: document.getElementById('reviewComment').value
+            };
+
+            fetch("https://formsubmit.co/ajax/uddeshyag12@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Thank you for sharing your experience! Your review has been submitted successfully.');
+                reviewForm.reset();
+            })
+            .catch(error => {
+                console.warn('Network request failed. Falling back to mailto link.', error);
+                const subject = `New RR Property Review from ${formData.name}`;
+                const body = `Name: ${formData.name}\nRating: ${formData.rating}\nFeedback: ${formData.feedback}`;
+                const mailtoUrl = `mailto:uddeshyag12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoUrl;
+                alert('Opened your email client to submit the review. Please click send in your mail app!');
+            })
+            .finally(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
         });
     }
 });

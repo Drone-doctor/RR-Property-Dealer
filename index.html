@@ -304,6 +304,80 @@
         </div>
     </section>
 
+    <!-- Customer Reviews & Feedback -->
+    <section class="reviews-section" id="reviews">
+        <div class="reviews-container">
+            <div class="reviews-grid">
+                <div class="reviews-header-block">
+                    <h2>What Our <span>Clients Say</span></h2>
+                    <p>Read about the experiences of our valued customers or share your own review below.</p>
+                    
+                    <!-- Predefined Reviews Grid -->
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Great experience renting a 2 BHK through RR Property. The process was transparent, quick, and highly professional!"</p>
+                            <h4 class="testimonial-author">- Shivam Gupta</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="testimonial-text">"Found a fully furnished Stanza Living PG exactly matching my budget. Excellent assistance by Uddeshya."</p>
+                            <h4 class="testimonial-author">- Aman Sharma</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-form-card">
+                    <h3>Share Your Experience</h3>
+                    <form id="reviewForm" action="https://formsubmit.co/uddeshyag12@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Customer Review - RR Property">
+                        
+                        <div class="form-group">
+                            <label for="reviewName" style="display: block; margin-bottom: 0.5rem; color: var(--text-main); font-weight: 500;">Your Name</label>
+                            <input type="text" id="reviewName" name="name" required placeholder="Enter your name" style="width: 100%; padding: 0.8rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-main); font-family: inherit;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-main); font-weight: 500;">Your Rating</label>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5" title="5 stars"><i class="fa-solid fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4" title="4 stars"><i class="fa-solid fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" title="3 stars"><i class="fa-solid fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" title="2 stars"><i class="fa-solid fa-star"></i></label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" title="1 star"><i class="fa-solid fa-star"></i></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+                            <label for="reviewComment" style="display: block; margin-bottom: 0.5rem; color: var(--text-main); font-weight: 500;">Your Feedback</label>
+                            <textarea id="reviewComment" name="feedback" rows="4" required placeholder="Tell us about your experience..." style="width: 100%; padding: 0.8rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-main); font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="reviewSubmitBtn" style="width: 100%; padding: 0.8rem; background: var(--primary); border: none; border-radius: 8px; color: #000; font-weight: 700; cursor: pointer; transition: var(--transition);">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-container">
