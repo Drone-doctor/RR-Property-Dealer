@@ -925,20 +925,15 @@ footer {
 }
 
 .about-card-front {
-    background-color: var(--bg-card);
-}
-
-.about-card-back {
     background: radial-gradient(circle at center, #1b150a 0%, #030303 100%);
     border: 3px solid var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotateY(180deg);
     position: relative;
 }
 
-.about-card-back::before {
+.about-card-front::before {
     content: '';
     position: absolute;
     top: 0;
@@ -949,13 +944,18 @@ footer {
     pointer-events: none;
 }
 
+.about-card-back {
+    background-color: var(--bg-card);
+    transform: rotateY(180deg);
+}
+
 .about-owner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.about-logo-back {
+.about-logo-front {
     width: 75%;
     height: auto;
     object-fit: contain;
