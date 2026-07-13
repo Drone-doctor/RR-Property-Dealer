@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            // Toggle hamburger animation style if desired
         });
 
-        // Close menu when links are clicked
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -57,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (matchesType && matchesAction) {
                 card.style.display = 'block';
-                // Trigger animation
                 card.style.opacity = '0';
                 setTimeout(() => {
                     card.style.opacity = '1';
@@ -69,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Click handler for property type filters (PG, 1 BHK, 2 BHK)
     if (propertyFilters) {
         propertyFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -81,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Click handler for transaction/action filters (Rent, Sale/Purchase)
     if (actionFilters) {
         actionFilters.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -103,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const typeVal = searchType.value;
             const actionVal = searchAction.value;
 
-            // Synchronize active filters
             if (propertyFilters) {
                 propertyFilters.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
@@ -124,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             activeAction = actionVal;
 
-            // Filter properties and scroll
             filterProperties();
             document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
         });
@@ -178,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
             });
+        });
     }
 
     // Visit Counter logic starting from 1000 users (Global API with local fallback)
