@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datasheet | NestX Aerospace</title>
+  <!-- Google Fonts: Outfit & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css?v=20260808_v17" />
+  <style>
+    body {
+      background-color: #080b11;
+      color: #e2e8f0;
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .ds-page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(16, 24, 40, 0.95);
+      border: 1px solid rgba(0, 243, 255, 0.25);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+    .ds-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #00f3ff;
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .ds-logo {
+      height: 42px;
+      width: auto;
+    }
+    .ds-header-code {
+      font-family: 'Space Grotesk', monospace;
+      font-weight: 700;
+      color: #00f3ff;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+    .ds-title-block {
+      margin-bottom: 2rem;
+    }
+    .ds-main-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 0.5rem 0;
+    }
+    .ds-sub-title {
+      font-size: 1.2rem;
+      color: #00f3ff;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+    }
+    .ds-highlights {
+      background: rgba(0, 243, 255, 0.08);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+    .ds-section-title {
+      font-size: 1.3rem;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.5rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 700;
+    }
+    .ds-desc {
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .ds-features-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 0.75rem;
+    }
+    .ds-features-list li {
+      background: rgba(8, 11, 17, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .text-cyan {
+      color: #00f3ff;
+    }
+    .ds-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .ds-table th, .ds-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .ds-table th {
+      background: rgba(0, 243, 255, 0.12);
+      color: #00f3ff;
+      font-weight: 700;
+    }
+    .ds-table tr:nth-child(even) {
+      background: rgba(8, 11, 17, 0.4);
+    }
+    .ds-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      justify-content: center;
+    }
+    .ds-footer {
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.25rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* Visual Feature & Technical Specs Badges Grid */
+    .ds-badge-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 1.15rem !important;
+      margin-top: 1rem !important;
+      width: 100% !important;
+    }
+    @media (max-width: 768px) {
+      .ds-badge-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    .ds-badge-card {
+      border-radius: 14px;
+      padding: 1.25rem 0.75rem;
+      text-align: center;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.6rem !important;
+      min-height: 125px;
+      box-sizing: border-box !important;
+      min-width: 0 !important;
+      transition: all 0.25s ease;
+    }
+    .ds-badge-card,
+    .ds-badge-card.filled,
+    .ds-badge-card.outline,
+    .ds-comp-card,
+    .ds-comp-card.filled,
+    .ds-comp-card.outline,
+    .ds-ai-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(8, 11, 17, 0.95) 100%) !important;
+      border: 1.5px solid rgba(0, 243, 255, 0.3) !important;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+      color: #ffffff !important;
+    }
+    .ds-badge-icon {
+      font-size: 2rem !important;
+      color: #00f3ff !important;
+    }
+    .ds-badge-card.filled .ds-badge-icon {
+      color: #38bdf8 !important;
+    }
+    .ds-badge-title {
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      line-height: 1.3 !important;
+      word-break: break-word;
+    }
+    .ds-badge-val {
+      font-size: 1.05rem !important;
+      font-weight: 800 !important;
+      color: #00f3ff !important;
+    }
+    .ds-badge-label {
+      font-size: 0.82rem !important;
+      color: #cbd5e1 !important;
+      font-weight: 600 !important;
+    }
+
+    /* AI Monitoring & Tracking Cards */
+    .ds-ai-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 1.25rem !important;
+      margin-top: 1rem !important;
+      width: 100% !important;
+    }
+    @media (max-width: 768px) {
+      .ds-ai-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .ds-ai-card {
+      background: rgba(15, 23, 42, 0.7) !important;
+      border: 1px solid rgba(0, 243, 255, 0.2) !important;
+      border-radius: 14px;
+      padding: 1.35rem 1rem;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      min-width: 0 !important;
+    }
+    .ds-ai-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(0, 243, 255, 0.1);
+      border: 2px solid #00f3ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #00f3ff;
+      margin-bottom: 0.85rem;
+    }
+    .ds-ai-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .ds-ai-desc {
+      font-size: 0.86rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* Competitive Advantage Cards */
+    .ds-comp-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 1.15rem !important;
+      margin-top: 1rem !important;
+      width: 100% !important;
+    }
+    @media (max-width: 768px) {
+      .ds-comp-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    .ds-comp-card {
+      background: rgba(15, 23, 42, 0.65) !important;
+      border: 1px solid rgba(0, 243, 255, 0.2) !important;
+      border-radius: 14px;
+      padding: 1.25rem 1rem;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      min-width: 0 !important;
+    }
+    .ds-comp-card.filled {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f2942 100%);
+      border-color: #00f3ff;
+    }
+    .ds-comp-icon-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(0, 243, 255, 0.12);
+      border: 2px solid #00f3ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      color: #00f3ff;
+      margin-bottom: 0.75rem;
+    }
+    .ds-comp-card.filled .ds-comp-icon-wrap {
+      background: #00f3ff;
+      color: #000;
+    }
+    .ds-comp-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+    .ds-comp-desc {
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        color: #000000;
+        padding: 0;
+      }
+      .ds-page {
+        border: none;
+        box-shadow: none;
+        background: #ffffff;
+        color: #000000;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ds-main-title, .ds-section-title, .ds-ai-title, .ds-comp-title, .ds-badge-title {
+        color: #000000;
+      }
+      .ds-sub-title, .ds-header-code, .text-cyan, .ds-badge-val, .ds-badge-icon {
+        color: #0284c7;
+      }
+      .ds-badge-card.filled, .ds-comp-card.filled {
+        background: #f1f5f9;
+        border-color: #0284c7;
+        color: #000000;
+      }
+      .ds-badge-card.outline, .ds-ai-card, .ds-comp-card {
+        background: #ffffff;
+        border-color: #cbd5e1;
+        color: #000000;
+      }
+      .ds-highlights {
+        background: #f1f5f9;
+        border-color: #cbd5e1;
+        color: #1e293b;
+      }
+      .ds-features-list li {
+        background: #f8fafc;
+        border-color: #e2e8f0;
+        color: #0f172a;
+      }
+      .ds-table th {
+        background: #e0f2fe;
+        color: #0369a1;
+      }
+      .ds-table td {
+        color: #1e293b;
+        border-color: #cbd5e1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Corporate Header / Navbar -->
+  <header class="navbar no-print" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/nestx_logo.png" alt="NestX Aerospace Logo" class="header-logo-img" />
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- Product Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="products.html" class="nav-link dropdown-toggle">Product <i class="fa-solid fa-caret-down nav-arrow"></i></a>
+          <div class="dropdown-menu glass-dropdown">
+            <a href="datasheet.html?id=signature-1" class="dropdown-item"><i class="fa-solid fa-helicopter"></i> SIGNATURE-I (Micro UAV)</a>
+            <a href="datasheet.html?id=command-1" class="dropdown-item"><i class="fa-solid fa-gamepad"></i> Command 1 Joystick</a>
+            <a href="datasheet.html?id=pocket-pro" class="dropdown-item"><i class="fa-solid fa-walkie-talkie"></i> Handheld Ground Controller</a>
+            <a href="datasheet.html?id=gnss-denied-1" class="dropdown-item"><i class="fa-solid fa-eye"></i> NX-VIOS GNSS-Denied System</a>
+            <a href="datasheet.html?id=atlas-1" class="dropdown-item"><i class="fa-solid fa-compass"></i> NX-Atlas 1 GNSS + Compass</a>
+            <a href="datasheet.html?id=joule-1" class="dropdown-item"><i class="fa-solid fa-bolt"></i> NX-Joule 1 Buck Converter</a>
+            <div class="dropdown-divider"></div>
+            <a href="products.html" class="dropdown-item highlight-item"><i class="fa-solid fa-grid-2"></i> View Full Product Catalog →</a>
+          </div>
+        </div>
+
+        <!-- Solution Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="index.html#solutions" class="nav-link dropdown-toggle">Solution <i class="fa-solid fa-caret-down nav-arrow"></i></a>
+          <div class="dropdown-menu glass-dropdown">
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-laser"></i> Lidar Solution</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-house-signal"></i> In-Door Positioning System</a>
+            <a href="datasheet.html?id=gnss-denied-1" class="dropdown-item"><i class="fa-solid fa-satellite-slash"></i> GNSS Denied System</a>
+            <a href="datasheet.html?id=command-1" class="dropdown-item"><i class="fa-solid fa-gamepad"></i> Customised Remote Controller</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-cubes"></i> 3D Mapping</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-wheat-awn"></i> Agri Crop Inspection</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-graduation-cap"></i> Remote Pilot Certificate Training</a>
+          </div>
+        </div>
+
+        <a href="index.html#contact" class="nav-link highlight">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="datasheet-app">
+    <!-- Rendered dynamically by datasheet.js -->
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/919353671254?text=Hello%20NestX%20Aerospace,%20I%20would%20like%20to%20enquire%20about%20your%20drone%20solutions" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp (+91 9353671254)" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-text">Enquire on WhatsApp</span>
+  </a>
+
+  <script src="datasheet.js?v=20260811_v1"></script>
+</body>
+</html>

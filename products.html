@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Catalog | NestX Aerospace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css?v=20260808_v17" />
+</head>
+
+<body>
+  <!-- Header (same as index) -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/nestx_logo.png" alt="NestX Aerospace Logo" class="header-logo-img" />
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <!-- Product Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="products.html" class="nav-link dropdown-toggle active">Product <i class="fa-solid fa-caret-down nav-arrow"></i></a>
+          <div class="dropdown-menu glass-dropdown">
+            <a href="datasheet.html?id=signature-1" class="dropdown-item"><i class="fa-solid fa-helicopter"></i> SIGNATURE-I (Micro UAV)</a>
+            <a href="datasheet.html?id=command-1" class="dropdown-item"><i class="fa-solid fa-gamepad"></i> Command 1 Joystick</a>
+            <a href="datasheet.html?id=pocket-pro" class="dropdown-item"><i class="fa-solid fa-walkie-talkie"></i> Handheld Ground Controller</a>
+            <a href="datasheet.html?id=gnss-denied-1" class="dropdown-item"><i class="fa-solid fa-eye"></i> NX-VIOS GNSS-Denied System</a>
+            <a href="datasheet.html?id=atlas-1" class="dropdown-item"><i class="fa-solid fa-compass"></i> NX-Atlas 1 GNSS + Compass</a>
+            <a href="datasheet.html?id=joule-1" class="dropdown-item"><i class="fa-solid fa-bolt"></i> NX-Joule 1 Buck Converter</a>
+            <div class="dropdown-divider"></div>
+            <a href="products.html" class="dropdown-item highlight-item"><i class="fa-solid fa-grid-2"></i> View Full Product Catalog →</a>
+          </div>
+        </div>
+
+        <!-- Solution Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="index.html#solutions" class="nav-link dropdown-toggle">Solution <i class="fa-solid fa-caret-down nav-arrow"></i></a>
+          <div class="dropdown-menu glass-dropdown">
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-laser"></i> Lidar Solution</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-house-signal"></i> In-Door Positioning System</a>
+            <a href="datasheet.html?id=gnss-denied-1" class="dropdown-item"><i class="fa-solid fa-satellite-slash"></i> GNSS Denied System</a>
+            <a href="datasheet.html?id=command-1" class="dropdown-item"><i class="fa-solid fa-gamepad"></i> Customised Remote Controller</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-cubes"></i> 3D Mapping</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-wheat-awn"></i> Agri Crop Inspection</a>
+            <a href="index.html#solutions" class="dropdown-item"><i class="fa-solid fa-graduation-cap"></i> Remote Pilot Certificate Training</a>
+          </div>
+        </div>
+
+        <a href="index.html#contact" class="nav-link highlight">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Simple Product Catalog Section -->
+    <section class="asteria-section products-bg page-view active-view" id="products-page">
+      <div class="container">
+        <div class="section-title-wrap center-title">
+
+          <h2 class="main-title">Product Catalog</h2>
+        </div>
+        <div class="ipet-catalog-layout">
+          <!-- Sidebar Navigation -->
+          <aside class="ipet-sidebar">
+            <ul class="ipet-cat-menu">
+              <li class="ipet-cat-item active" data-category="uas"><span>UAS (DRONES)</span><i
+                  class="fa-solid fa-chevron-right"></i></li>
+              <li class="ipet-cat-item" data-category="radio-controllers"><span>RADIO CONTROLLERS</span><i
+                  class="fa-solid fa-chevron-right"></i></li>
+              <li class="ipet-cat-item" data-category="accessories"><span>ACCESSORIES</span><i
+                  class="fa-solid fa-chevron-right"></i></li>
+            </ul>
+          </aside>
+          <!-- Content Area -->
+          <div class="ipet-content-area" id="category-content"
+            style="padding: 2.5rem; background: rgba(16, 24, 40, 0.75); border-radius: 12px; border: 1px solid rgba(0, 243, 255, 0.15); color: #fff;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #00f3ff;">UAS (DRONES)</h3>
+            <p style="color: #94a3b8;">Product details coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/919353671254?text=Hello%20NestX%20Aerospace,%20I%20would%20like%20to%20enquire%20about%20your%20drone%20solutions" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" title="Chat on WhatsApp (+91 9353671254)" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-text">Enquire on WhatsApp</span>
+  </a>
+
+  <script src="products.js?v=20260811_v1"></script>
+  <script src="datasheet.js?v=20260811_v1"></script>
+  <script src="app.js?v=20260811_v1"></script>
+</body>
+</html>
